@@ -6,7 +6,7 @@ use Arrilot\BitrixBlade\BladeProvider;
 use Arrilot\BitrixModels\Debug\IlluminateQueryDebugger;
 use Arrilot\BitrixModels\Models\BaseBitrixModel;
 use Arrilot\BitrixModels\Models\EloquentModel;
-use Bitrix\Main\Config\Configuration;
+//use Bitrix\Main\Config\Configuration;
 use DB;
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
@@ -24,8 +24,8 @@ class ServiceProvider
      */
     public static function register()
     {
-        BaseBitrixModel::setCurrentLanguage(strtoupper(LANGUAGE_ID));
-        self::bootstrapIlluminatePagination();
+        BaseBitrixModel::setCurrentLanguage('RU');
+//        self::bootstrapIlluminatePagination();
     }
 
     /**
@@ -83,15 +83,15 @@ class ServiceProvider
      */
     protected static function bootstrapIlluminateDatabase()
     {
-        $config = self::getBitrixDbConfig();
+        //$config = self::getBitrixDbConfig();
 
         $capsule = new Capsule(self::instantiateServiceContainer());
         $capsule->addConnection([
             'driver'    => 'mysql',
-            'host'      => $config['host'],
-            'database'  => $config['database'],
-            'username'  => $config['login'],
-            'password'  => $config['password'],
+            'host'      => env('bx-host'),
+            'database'  => env('bx-database'),
+            'username'  => env('bx-login'),
+            'password'  => env('bx-password'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -130,13 +130,13 @@ class ServiceProvider
      *
      * @return array
      */
-    protected static function getBitrixDbConfig()
-    {
-        $config = Configuration::getInstance();
-        $connections = $config->get('connections');
-
-        return $connections['default'];
-    }
+//    protected static function getBitrixDbConfig()
+//    {
+//        $config = Configuration::getInstance();
+//        $connections = $config->get('connections');
+//
+//        return $connections['default'];
+//    }
 
     /**
      * Для множественных полей Highload блоков битрикс использует вспомогательные таблицы.
