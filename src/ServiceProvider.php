@@ -88,10 +88,10 @@ class ServiceProvider
         $capsule = new Capsule(self::instantiateServiceContainer());
         $capsule->addConnection([
             'driver'    => 'mysql',
-            'host'      => env('bx-host'),
-            'database'  => env('bx-database'),
-            'username'  => env('bx-login'),
-            'password'  => env('bx-password'),
+            'host'      => env('BX_HOST'),
+            'database'  => env('BX_DATABASE'),
+            'username'  => env('BX_LOGIN'),
+            'password'  => env('BX_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
