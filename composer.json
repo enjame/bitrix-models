@@ -1,5 +1,5 @@
 {
-  "name": "arrilot/bitrix-models",
+  "name": "enjame/bitrix-models",
   "license": "MIT",
   "keywords": [
     "bitrix",
@@ -7,18 +7,15 @@
   ],
   "authors": [
     {
-      "name": "Nekrasov Ilya",
-      "email": "nekrasov.ilya90@gmail.com"
+      "name": "Enjame",
+      "email": "enjame74@gmail.com"
     }
   ],
   "homepage": "https://github.com/Arrilot/bitrix-models",
   "require": {
-    "php": ">=5.6.4",
-    "illuminate/support": "^5.4,<5.8",
-    "illuminate/pagination": "^5.4,<5.8"
+    "php": ">=5.6.4"
   },
   "suggest": {
-    "arrilot/bitrix-blade": "To render pagination views using ->links()",
     "illuminate/database": "^5.4,<5.8 to use Eloquent models",
     "illuminate/events": "^5.4,<5.8 to use events in Eloquent models"
   },
@@ -28,12 +25,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Arrilot\\BitrixModels\\": "src/"
+      "Enjame\\BitrixModels\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Arrilot\\Tests\\BitrixModels\\": "tests/"
+      "Enjame\\Tests\\BitrixModels\\": "tests/"
     }
   }
 }
